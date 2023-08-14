@@ -51,9 +51,13 @@ namespace MatchingApp
         private void SwitchTurn()
         {
             if (currentturn == TurnEnum.Player1 && listbuttons.Where(b => b.ForeColor == Color.LightBlue).ToList().Count() == listbuttons.Count())
-            { currentturn = TurnEnum.Player2; }
+            { 
+                currentturn = TurnEnum.Player2; 
+            }
             else if (currentturn == TurnEnum.Player2 && listbuttons.Where(b => b.ForeColor == Color.LightBlue).ToList().Count() == listbuttons.Count())
-            { currentturn = TurnEnum.Player1; }
+            { 
+                currentturn = TurnEnum.Player1; 
+            }
             DisplayCurrentTurn();
         }
         private void DisplayCurrentTurn()
