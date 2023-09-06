@@ -33,8 +33,8 @@
             lblLastName = new Label();
             txtLastName = new TextBox();
             btnSearch = new Button();
-            gPresident = new DataGridView();
             btnNew = new Button();
+            gPresident = new DataGridView();
             tblMain.SuspendLayout();
             tblSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gPresident).BeginInit();
@@ -85,7 +85,7 @@
             lblLastName.Name = "lblLastName";
             lblLastName.Size = new Size(103, 28);
             lblLastName.TabIndex = 0;
-            lblLastName.Text = "Last Name";
+            lblLastName.Text = "&Last Name";
             // 
             // txtLastName
             // 
@@ -105,17 +105,6 @@
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
             // 
-            // gPresident
-            // 
-            gPresident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gPresident.Dock = DockStyle.Fill;
-            gPresident.Location = new Point(3, 61);
-            gPresident.Name = "gPresident";
-            gPresident.RowHeadersWidth = 51;
-            gPresident.RowTemplate.Height = 29;
-            gPresident.Size = new Size(814, 566);
-            gPresident.TabIndex = 1;
-            // 
             // btnNew
             // 
             btnNew.AutoSize = true;
@@ -125,6 +114,18 @@
             btnNew.TabIndex = 3;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
+            // 
+            // gPresident
+            // 
+            gPresident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gPresident.Dock = DockStyle.Fill;
+            gPresident.Location = new Point(3, 61);
+            gPresident.Name = "gPresident";
+            gPresident.RowHeadersWidth = 51;
+            gPresident.RowTemplate.Height = 29;
+            gPresident.Size = new Size(814, 566);
+            gPresident.StandardTab = true;
+            gPresident.TabIndex = 1;
             // 
             // frmSearch
             // 

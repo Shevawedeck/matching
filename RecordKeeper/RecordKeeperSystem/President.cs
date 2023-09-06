@@ -13,7 +13,7 @@ namespace RecordKeeperSystem
         {
             DataTable dt = new();
             SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentGet");
-            cmd.Parameters["@LastName"].Value = lastname;
+            SQLUtility.SetParamValue(cmd, "@LastName", lastname);
             dt = SQLUtility.GetDataTable(cmd);
             return dt;
         }
@@ -22,7 +22,7 @@ namespace RecordKeeperSystem
         {
             DataTable dt = new();
             SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentGet");
-            cmd.Parameters["@PresidentId"].Value = presidentid;
+            SQLUtility.SetParamValue(cmd, "@PresidentId", presidentid);
             dt = SQLUtility.GetDataTable(cmd);
             return dt;
         }
@@ -30,32 +30,26 @@ namespace RecordKeeperSystem
         {
             DataTable dt = new();
             SqlCommand cmd = SQLUtility.GetSQLCommand("PartyGet");
-            cmd.Parameters["@All"].Value = 1;
+            SQLUtility.SetParamValue(cmd, "@All", 1);
             dt = SQLUtility.GetDataTable(cmd);
             return dt;
 
         }
         public static void Save(DataTable dtpresident)
         {
-            SQLUtility.DebugPrintDataTable(dtpresident);
+            if(dtpresident.Rows.Count == 0)
+            {
+                throw new Exception("Cannot call President save method because there are no rows in the table."); 
+            }
             DataRow r = dtpresident.Rows[0];
-            int id = (int)r["PresidentId"];
-            string sql = "";
-            if (id > 0)
-            {
-                sql = $"update president set PartyId = '{r["PartyId"]}', Num = '{r["Num"]}', FirstName = '{r["FirstName"]}', LastName = '{r["LastName"]}', DateBorn = '{r["DateBorn"]}', TermStart = '{r["TermStart"]}' where PresidentId = '{r["PresidentId"]}' ";
-            }
-            else
-            {
-                sql = $"insert President(PartyId, Num, FirstName, LastName, DateBorn, TermStart) select '{r["PartyId"]}', {r["Num"]}, '{r["FirstName"]}', '{r["LastName"]}', '{r["DateBorn"]}', {r["TermStart"]} ";
-            }
-            SQLUtility.ExecuteSQL(sql);
+            SQLUtility.SaveDataRow(r, "PresidentUpdate");
         }
         public static void Delete(DataTable dtpresident)
         {
             int id = (int)dtpresident.Rows[0]["PresidentId"];
-            string sql = "delete president where PresidentId = " + id;
-            SQLUtility.ExecuteSQL(sql);
+            SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentDelete");
+            SQLUtility.SetParamValue(cmd, "@PresidentId", id);
+            SQLUtility.ExecuteSQL(cmd);
         }
     }
 }
