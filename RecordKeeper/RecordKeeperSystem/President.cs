@@ -33,7 +33,6 @@ namespace RecordKeeperSystem
             SQLUtility.SetParamValue(cmd, "@All", 1);
             dt = SQLUtility.GetDataTable(cmd);
             return dt;
-
         }
         public static void Save(DataTable dtpresident)
         {

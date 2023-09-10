@@ -14,7 +14,6 @@ namespace RecordKeeperWinForm
             btnNew.Click += BtnNew_Click;
             txtLastName.KeyDown += TxtLastName_KeyDown;
             gPresident.KeyDown += GPresident_KeyDown;
-            WindowsFormUtility.FormatGridForSearchResults(gPresident);
         }
         private void GPresident_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
@@ -27,7 +26,7 @@ namespace RecordKeeperWinForm
                 this.Cursor = Cursors.WaitCursor;
                 DataTable dt = President.SearchPresidents(lastname);
                 gPresident.DataSource = dt;
-                gPresident.Columns["PresidentId"].Visible = false;
+                WindowsFormUtility.FormatGridForSearchResults(gPresident, "President");
                 if (gPresident.Rows.Count > 0)
                 {
                     gPresident.Focus();
@@ -48,7 +47,7 @@ namespace RecordKeeperWinForm
             int id = 0;
             if (rowindex > -1)
             {
-                id = (int)gPresident.Rows[rowindex].Cells["PresidentId"].Value;
+                id = WindowsFormUtility.GetIdFromGrid(gPresident, rowindex, "PresidentId");
             }
             if (this.MdiParent != null && this.MdiParent is frmMain)
             {

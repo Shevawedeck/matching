@@ -34,7 +34,7 @@
             pnlOptButtons = new FlowLayoutPanel();
             optCountry = new RadioButton();
             optCity = new RadioButton();
-            opyOlympicMedal = new RadioButton();
+            optOlympicMedal = new RadioButton();
             optSeason = new RadioButton();
             optSport = new RadioButton();
             optSportSubcategory = new RadioButton();
@@ -53,7 +53,7 @@
             tblMain.Controls.Add(pnlOptButtons, 0, 1);
             tblMain.Dock = DockStyle.Fill;
             tblMain.Location = new Point(0, 0);
-            tblMain.Margin = new Padding(4, 4, 4, 4);
+            tblMain.Margin = new Padding(4);
             tblMain.Name = "tblMain";
             tblMain.RowCount = 2;
             tblMain.RowStyles.Add(new RowStyle());
@@ -64,7 +64,7 @@
             // btnSave
             // 
             btnSave.Location = new Point(4, 4);
-            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Margin = new Padding(4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(129, 41);
             btnSave.TabIndex = 0;
@@ -86,7 +86,7 @@
             // 
             pnlOptButtons.Controls.Add(optCountry);
             pnlOptButtons.Controls.Add(optCity);
-            pnlOptButtons.Controls.Add(opyOlympicMedal);
+            pnlOptButtons.Controls.Add(optOlympicMedal);
             pnlOptButtons.Controls.Add(optSeason);
             pnlOptButtons.Controls.Add(optSport);
             pnlOptButtons.Controls.Add(optSportSubcategory);
@@ -100,6 +100,7 @@
             // optCountry
             // 
             optCountry.AutoSize = true;
+            optCountry.Checked = true;
             optCountry.Location = new Point(3, 3);
             optCountry.Name = "optCountry";
             optCountry.Size = new Size(116, 32);
@@ -115,20 +116,18 @@
             optCity.Name = "optCity";
             optCity.Size = new Size(80, 32);
             optCity.TabIndex = 1;
-            optCity.TabStop = true;
             optCity.Text = "Cities";
             optCity.UseVisualStyleBackColor = true;
             // 
-            // opyOlympicMedal
+            // optOlympicMedal
             // 
-            opyOlympicMedal.AutoSize = true;
-            opyOlympicMedal.Location = new Point(3, 79);
-            opyOlympicMedal.Name = "opyOlympicMedal";
-            opyOlympicMedal.Size = new Size(96, 32);
-            opyOlympicMedal.TabIndex = 2;
-            opyOlympicMedal.TabStop = true;
-            opyOlympicMedal.Text = "Medals";
-            opyOlympicMedal.UseVisualStyleBackColor = true;
+            optOlympicMedal.AutoSize = true;
+            optOlympicMedal.Location = new Point(3, 79);
+            optOlympicMedal.Name = "optOlympicMedal";
+            optOlympicMedal.Size = new Size(96, 32);
+            optOlympicMedal.TabIndex = 2;
+            optOlympicMedal.Text = "Medals";
+            optOlympicMedal.UseVisualStyleBackColor = true;
             // 
             // optSeason
             // 
@@ -137,7 +136,6 @@
             optSeason.Name = "optSeason";
             optSeason.Size = new Size(103, 32);
             optSeason.TabIndex = 3;
-            optSeason.TabStop = true;
             optSeason.Text = "Seasons";
             optSeason.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +146,6 @@
             optSport.Name = "optSport";
             optSport.Size = new Size(90, 32);
             optSport.TabIndex = 4;
-            optSport.TabStop = true;
             optSport.Text = "Sports";
             optSport.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +156,6 @@
             optSportSubcategory.Name = "optSportSubcategory";
             optSportSubcategory.Size = new Size(211, 32);
             optSportSubcategory.TabIndex = 5;
-            optSportSubcategory.TabStop = true;
             optSportSubcategory.Text = "Sport Subcategories";
             optSportSubcategory.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +166,7 @@
             ClientSize = new Size(1100, 630);
             Controls.Add(tblMain);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "frmDataMaintenence";
             Text = "Data Maintenence";
             tblMain.ResumeLayout(false);
@@ -188,7 +184,7 @@
         private FlowLayoutPanel pnlOptButtons;
         private RadioButton optCountry;
         private RadioButton optCity;
-        private RadioButton opyOlympicMedal;
+        private RadioButton optOlympicMedal;
         private RadioButton optSeason;
         private RadioButton optSport;
         private RadioButton optSportSubcategory;

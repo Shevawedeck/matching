@@ -4,6 +4,7 @@ namespace RecordKeeperWinForm
     public partial class frmPresident : Form
     {
         DataTable dtpresident = new DataTable();
+        DataTable dtpresidentmedal = new DataTable();
         BindingSource bindsource = new BindingSource();
         public frmPresident()
         {
@@ -31,6 +32,9 @@ namespace RecordKeeperWinForm
             WindowsFormUtility.SetControlBinding(txtTermStart, bindsource);
             WindowsFormUtility.SetControlBinding(txtTermEnd, bindsource);
             this.Text = GetPresidentDesc();
+            dtpresidentmedal = PresidentMedal.LoadByPresidentId(presidentid);
+            gMedal.DataSource = dtpresidentmedal;
+            WindowsFormUtility.AddComboBoxToGrid(gMedal, DataMaintenance.GetDataList("Medal"), "Medal", "MedalName");
             this.Show();
         }
         private bool Save()
