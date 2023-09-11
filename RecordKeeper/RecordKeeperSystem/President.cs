@@ -12,7 +12,7 @@ namespace RecordKeeperSystem
         public static DataTable SearchPresidents(string lastname)
         {
             DataTable dt = new();
-            SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentGet");
+            SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentSearch");
             SQLUtility.SetParamValue(cmd, "@LastName", lastname);
             dt = SQLUtility.GetDataTable(cmd);
             return dt;

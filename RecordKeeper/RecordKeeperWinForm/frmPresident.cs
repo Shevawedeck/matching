@@ -6,15 +6,23 @@ namespace RecordKeeperWinForm
         DataTable dtpresident = new DataTable();
         DataTable dtpresidentmedal = new DataTable();
         BindingSource bindsource = new BindingSource();
+        string deletecolname = "deletecol";
+        int presidentid = 0;
         public frmPresident()
         {
             InitializeComponent();
             btnSave.Click += BtnSave_Click;
             btnDelete.Click += BtnDelete_Click;
             this.FormClosing += FrmPresident_FormClosing;
+            btnSaveMedal.Click += BtnSaveMedal_Click;
+            gMedal.CellContentClick += GMedal_CellContentClick;
         }
-        public void ShowForm(int presidentid)
+
+       
+
+        public void ShowForm(int presidentidval)
         {
+            presidentid = presidentidval;
             this.Tag = presidentid;
             dtpresident = President.Load(presidentid);
             bindsource.DataSource = dtpresident;
@@ -32,10 +40,17 @@ namespace RecordKeeperWinForm
             WindowsFormUtility.SetControlBinding(txtTermStart, bindsource);
             WindowsFormUtility.SetControlBinding(txtTermEnd, bindsource);
             this.Text = GetPresidentDesc();
+            LoadPresidentMedals();
+            this.Show();
+        }
+        private void LoadPresidentMedals()
+        {
             dtpresidentmedal = PresidentMedal.LoadByPresidentId(presidentid);
+            gMedal.Columns.Clear();
             gMedal.DataSource = dtpresidentmedal;
             WindowsFormUtility.AddComboBoxToGrid(gMedal, DataMaintenance.GetDataList("Medal"), "Medal", "MedalName");
-            this.Show();
+            WindowsFormUtility.AddDeleteButtonToGrid(gMedal, deletecolname);
+            WindowsFormUtility.FormatGridForEdit(gMedal, "PresidentMedal");
         }
         private bool Save()
         {
@@ -87,6 +102,38 @@ namespace RecordKeeperWinForm
                 Application.UseWaitCursor = false;
             }
         }
+        private void SavePresidentMedal()
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, Application.ProductName);
+            }
+            PresidentMedal.SaveTable(dtpresidentmedal, presidentid);
+        }
+        private void DeletePresidentMedal(int rowindex)
+        {
+            int id = WindowsFormUtility.GetIdFromGrid(gMedal, rowindex, "PresidentMedalId");
+            if(id > 0)
+            {
+                try
+                {
+                    PresidentMedal.Delete(id);
+                    LoadPresidentMedals();
+                }
+                catch(Exception ex )
+                {
+                    MessageBox.Show(ex.Message, Application.ProductName);
+                }
+            }
+            else if(id < gMedal.Rows.Count)
+            {
+                gMedal.Rows.RemoveAt(rowindex);
+            }
+        }
         private string GetPresidentDesc()
         {
             string value = "New President";
@@ -129,6 +176,14 @@ namespace RecordKeeperWinForm
                 }
             }
 
+        }
+        private void BtnSaveMedal_Click(object? sender, EventArgs e)
+        {
+            SavePresidentMedal();
+        }
+        private void GMedal_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            DeletePresidentMedal(e.RowIndex);
         }
     }
 }

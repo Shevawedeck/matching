@@ -14,6 +14,12 @@ namespace RecordKeeperWinForm
             btnNew.Click += BtnNew_Click;
             txtLastName.KeyDown += TxtLastName_KeyDown;
             gPresident.KeyDown += GPresident_KeyDown;
+            this.BindForm();
+        }
+        private void BindForm() 
+        {
+            lstParty.DataSource = President.GetPartyList();
+            lstParty.DisplayMember =
         }
         private void GPresident_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
@@ -30,7 +36,7 @@ namespace RecordKeeperWinForm
                 if (gPresident.Rows.Count > 0)
                 {
                     gPresident.Focus();
-                    gPresident.Rows[0].Selected = true;
+                    gPresident.Rows[0].Selected = true; 
                 }
             }
             catch

@@ -33,7 +33,7 @@ namespace RecordKeeperWinForm
                     WindowsFormUtility.AddComboBoxToGrid(gData, DataMaintenance.GetDataList(TableTypeEnum.Sport.ToString()), "Sport", "SportName");
                     break;
             }
-            gData.Columns.Add(new DataGridViewButtonColumn() { Text = "X", HeaderText = "Delete", Name = deletecolname, UseColumnTextForButtonValue = true });
+            WindowsFormUtility.AddDeleteButtonToGrid(gData, deletecolname);
             WindowsFormUtility.FormatGridForEdit(gData, currenttabletype.ToString());
         }
         private bool Save()
