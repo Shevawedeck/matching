@@ -16,32 +16,34 @@ namespace RecordKeeperWinForm
             gPresident.KeyDown += GPresident_KeyDown;
             this.BindForm();
         }
-        private void BindForm() 
+        private void BindForm()
         {
-            lstParty.DataSource = President.GetPartyList();
-            lstParty.DisplayMember =
+            lstParty.DataSource = President.GetPartyList(true);
+            lstParty.DisplayMember = "PartyName";
+            lstParty.ValueMember = "PartyId";
         }
         private void GPresident_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
             ShowPresidentForm(e.RowIndex);
         }
-        private void SearchForPresident(string lastname)
+        private void SearchForPresident(int partyid, string lastname, int begintermstart, int endtermstart)
         {
+            this.Cursor = Cursors.WaitCursor;
+
             try
             {
-                this.Cursor = Cursors.WaitCursor;
-                DataTable dt = President.SearchPresidents(lastname);
+                DataTable dt = President.SearchPresidents(partyid, lastname, begintermstart, endtermstart);
                 gPresident.DataSource = dt;
                 WindowsFormUtility.FormatGridForSearchResults(gPresident, "President");
                 if (gPresident.Rows.Count > 0)
                 {
                     gPresident.Focus();
-                    gPresident.Rows[0].Selected = true; 
+                    gPresident.Rows[0].Selected = true;
                 }
             }
-            catch
+            catch(Exception ex) 
             {
-                throw;
+                MessageBox.Show(ex.Message, Application.ProductName);
             }
             finally
             {
@@ -62,7 +64,17 @@ namespace RecordKeeperWinForm
         }
         private void DoSearch()
         {
-            SearchForPresident(txtLastName.Text);
+            int partyid = 0;
+            int begintermstart = 0;
+            int endtermstart = 0;
+
+            if (lstParty.SelectedValue != null && lstParty.SelectedValue is int)
+            {
+                partyid = (int)lstParty.SelectedValue;
+            }
+            int.TryParse(txtBeginTermStart.Text, out begintermstart);
+            int.TryParse(txtEndTermStart.Text, out endtermstart);
+            SearchForPresident(partyid, txtLastName.Text, begintermstart, endtermstart);
         }
         private void BtnSearch_Click(object? sender, EventArgs e)
         {

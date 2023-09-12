@@ -17,10 +17,15 @@ namespace RecordKeeperWinForm
             InitializeComponent();
             mnuSearchPres.Click += MnuSearchPres_Click;
             mnuNewPres.Click += MnuNewPres_Click;
+            mnuDashboard.Click += MnuDashboard_Click;
             mnuWindowTile.Click += MnuWindowTile_Click;
             mnuWindowCascade.Click += MnuWindowCascade_Click;
             mnuDataMaintEdit.Click += MnuDataMaintEdit_Click;
+            mnuOlympicsCreateNewBasedOn.Click += MnuOlympicsCreateNewBasedOn_Click;
+            mnuOlympicsList.Click += MnuOlympicsList_Click;
+            OpenForm(typeof(frmDashboard));
         }
+
         public void OpenForm(Type frmtype, int pkvalue = 0)
         {
             bool b = WindowsFormUtility.IsFormOpen(frmtype);
@@ -42,6 +47,24 @@ namespace RecordKeeperWinForm
                 else if (frmtype == typeof(frmDataMaintenence))
                 {
                     frmDataMaintenence f = new();
+                    newfrm = f;
+                    f.Show();
+                }
+                else if (frmtype == typeof(frmDashboard))
+                {
+                    frmDashboard f = new frmDashboard();
+                    newfrm = f;
+                    f.Show();
+                }
+                else if (frmtype == typeof(frmOlympicsCreateBasedOnPrevious))
+                {
+                    frmOlympicsCreateBasedOnPrevious f = new();
+                    newfrm = f;
+                    f.Show();
+                }
+                else if (frmtype == typeof(frmOlympicsSummary))
+                {
+                    frmOlympicsSummary f = new();
                     newfrm = f;
                     f.Show();
                 }
@@ -88,5 +111,18 @@ namespace RecordKeeperWinForm
         {
             OpenForm(typeof(frmDataMaintenence));
         }
+        private void MnuDashboard_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmDashboard));
+        }
+        private void MnuOlympicsCreateNewBasedOn_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmOlympicsCreateBasedOnPrevious));
+        }
+        private void MnuOlympicsList_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmOlympicsSummary));
+        }
+
     }
 }

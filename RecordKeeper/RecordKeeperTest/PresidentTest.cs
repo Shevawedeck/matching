@@ -151,7 +151,7 @@ namespace RecordKeeperTest
             Assume.That(num > 0, "There are no presidents that match the search for " + num);
             TestContext.WriteLine(num + " presidents that match the search for " + criteria);
             TestContext.WriteLine("ensure that search returns " + num + "rows");
-            DataTable dt = President.SearchPresidents(criteria);
+            DataTable dt = President.SearchPresidents(0, criteria, 0,0);
             int results = dt.Rows.Count;
             Assert.IsTrue(results == num, "results of president search does not match num of presidents, " + results + " <> " + num);
             TestContext.WriteLine("number of rows returned by president search is " + results);

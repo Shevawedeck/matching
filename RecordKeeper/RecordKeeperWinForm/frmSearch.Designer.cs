@@ -30,11 +30,10 @@
         {
             tblMain = new TableLayoutPanel();
             tblSearch = new TableLayoutPanel();
-            lblLastName = new Label();
-            txtLastName = new TextBox();
             btnSearch = new Button();
             btnNew = new Button();
-            gPresident = new DataGridView();
+            lblLastName = new Label();
+            txtLastName = new TextBox();
             lblParty = new Label();
             lblTermStart = new Label();
             lstParty = new ComboBox();
@@ -42,10 +41,11 @@
             txtBeginTermStart = new TextBox();
             txtEndTermStart = new TextBox();
             lblTermStartTo = new Label();
+            gPresident = new DataGridView();
             tblMain.SuspendLayout();
             tblSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gPresident).BeginInit();
             tblTermStart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gPresident).BeginInit();
             SuspendLayout();
             // 
             // tblMain
@@ -59,10 +59,10 @@
             tblMain.Margin = new Padding(4);
             tblMain.Name = "tblMain";
             tblMain.RowCount = 2;
-            tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 31.3056374F));
-            tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 68.69436F));
+            tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 30.8605347F));
+            tblMain.RowStyles.Add(new RowStyle(SizeType.Percent, 69.1394653F));
             tblMain.Size = new Size(956, 674);
-            tblMain.TabIndex = 0;
+            tblMain.TabIndex = 1;
             // 
             // tblSearch
             // 
@@ -83,128 +83,136 @@
             tblSearch.Margin = new Padding(4);
             tblSearch.Name = "tblSearch";
             tblSearch.RowCount = 4;
-            tblSearch.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tblSearch.RowStyles.Add(new RowStyle());
-            tblSearch.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tblSearch.RowStyles.Add(new RowStyle());
-            tblSearch.Size = new Size(367, 203);
+            tblSearch.RowStyles.Add(new RowStyle());
+            tblSearch.RowStyles.Add(new RowStyle());
+            tblSearch.Size = new Size(334, 172);
             tblSearch.TabIndex = 0;
-            // 
-            // lblLastName
-            // 
-            lblLastName.Anchor = AnchorStyles.Left;
-            lblLastName.AutoSize = true;
-            lblLastName.Location = new Point(4, 66);
-            lblLastName.Margin = new Padding(4, 0, 4, 0);
-            lblLastName.Name = "lblLastName";
-            lblLastName.Size = new Size(103, 28);
-            lblLastName.TabIndex = 0;
-            lblLastName.Text = "&Last Name";
-            // 
-            // txtLastName
-            // 
-            txtLastName.Anchor = AnchorStyles.Left;
-            txtLastName.Location = new Point(114, 63);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(125, 34);
-            txtLastName.TabIndex = 1;
             // 
             // btnSearch
             // 
             btnSearch.AutoSize = true;
-            btnSearch.Location = new Point(3, 163);
+            btnSearch.Location = new Point(3, 131);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 38);
-            btnSearch.TabIndex = 2;
+            btnSearch.TabIndex = 6;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnNew
             // 
+            btnNew.Anchor = AnchorStyles.Right;
             btnNew.AutoSize = true;
-            btnNew.Location = new Point(114, 163);
+            btnNew.Location = new Point(257, 131);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(74, 38);
-            btnNew.TabIndex = 3;
+            btnNew.TabIndex = 7;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
             // 
-            // gPresident
+            // lblLastName
             // 
-            gPresident.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            gPresident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gPresident.Location = new Point(3, 219);
-            gPresident.Name = "gPresident";
-            gPresident.RowHeadersWidth = 51;
-            gPresident.RowTemplate.Height = 29;
-            gPresident.Size = new Size(814, 452);
-            gPresident.StandardTab = true;
-            gPresident.TabIndex = 1;
+            lblLastName.Anchor = AnchorStyles.Left;
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(4, 48);
+            lblLastName.Margin = new Padding(4, 0, 4, 0);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(103, 28);
+            lblLastName.TabIndex = 2;
+            lblLastName.Text = "&Last Name";
+            // 
+            // txtLastName
+            // 
+            txtLastName.Dock = DockStyle.Fill;
+            txtLastName.Location = new Point(114, 45);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(217, 34);
+            txtLastName.TabIndex = 3;
             // 
             // lblParty
             // 
+            lblParty.Anchor = AnchorStyles.Left;
             lblParty.AutoSize = true;
-            lblParty.Location = new Point(3, 0);
+            lblParty.Location = new Point(3, 7);
             lblParty.Name = "lblParty";
-            lblParty.Size = new Size(65, 28);
-            lblParty.TabIndex = 4;
+            lblParty.Size = new Size(56, 28);
+            lblParty.TabIndex = 1;
             lblParty.Text = "Party";
             // 
             // lblTermStart
             // 
+            lblTermStart.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblTermStart.AutoSize = true;
-            lblTermStart.Location = new Point(3, 100);
+            lblTermStart.Location = new Point(3, 91);
             lblTermStart.Name = "lblTermStart";
-            lblTermStart.Size = new Size(100, 28);
-            lblTermStart.TabIndex = 5;
+            lblTermStart.Size = new Size(105, 28);
+            lblTermStart.TabIndex = 4;
             lblTermStart.Text = "Term Start";
             // 
             // lstParty
             // 
+            lstParty.Dock = DockStyle.Fill;
             lstParty.FormattingEnabled = true;
             lstParty.Location = new Point(114, 3);
             lstParty.Name = "lstParty";
-            lstParty.Size = new Size(151, 36);
-            lstParty.TabIndex = 6;
+            lstParty.Size = new Size(217, 36);
+            lstParty.TabIndex = 1;
             // 
             // tblTermStart
             // 
+            tblTermStart.AutoSize = true;
             tblTermStart.ColumnCount = 3;
-            tblTermStart.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tblTermStart.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tblTermStart.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 73F));
+            tblTermStart.ColumnStyles.Add(new ColumnStyle());
+            tblTermStart.ColumnStyles.Add(new ColumnStyle());
+            tblTermStart.ColumnStyles.Add(new ColumnStyle());
             tblTermStart.Controls.Add(txtBeginTermStart, 0, 0);
             tblTermStart.Controls.Add(txtEndTermStart, 2, 0);
             tblTermStart.Controls.Add(lblTermStartTo, 1, 0);
-            tblTermStart.Location = new Point(114, 103);
+            tblTermStart.Dock = DockStyle.Fill;
+            tblTermStart.Location = new Point(114, 85);
             tblTermStart.Name = "tblTermStart";
             tblTermStart.RowCount = 1;
-            tblTermStart.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblTermStart.Size = new Size(250, 54);
-            tblTermStart.TabIndex = 7;
+            tblTermStart.RowStyles.Add(new RowStyle());
+            tblTermStart.Size = new Size(217, 40);
+            tblTermStart.TabIndex = 5;
             // 
             // txtBeginTermStart
             // 
-            txtBeginTermStart.Location = new Point(4, 3);
+            txtBeginTermStart.Location = new Point(3, 3);
             txtBeginTermStart.Name = "txtBeginTermStart";
             txtBeginTermStart.Size = new Size(82, 34);
             txtBeginTermStart.TabIndex = 0;
             // 
             // txtEndTermStart
             // 
-            txtEndTermStart.Location = new Point(180, 3);
+            txtEndTermStart.Dock = DockStyle.Fill;
+            txtEndTermStart.Location = new Point(129, 3);
             txtEndTermStart.Name = "txtEndTermStart";
-            txtEndTermStart.Size = new Size(68, 34);
-            txtEndTermStart.TabIndex = 1;
+            txtEndTermStart.Size = new Size(85, 34);
+            txtEndTermStart.TabIndex = 2;
             // 
             // lblTermStartTo
             // 
+            lblTermStartTo.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblTermStartTo.AutoSize = true;
-            lblTermStartTo.Location = new Point(91, 0);
+            lblTermStartTo.Location = new Point(91, 6);
             lblTermStartTo.Name = "lblTermStartTo";
             lblTermStartTo.Size = new Size(32, 28);
-            lblTermStartTo.TabIndex = 2;
+            lblTermStartTo.TabIndex = 1;
             lblTermStartTo.Text = "To";
+            // 
+            // gPresident
+            // 
+            gPresident.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            gPresident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gPresident.Location = new Point(3, 211);
+            gPresident.Name = "gPresident";
+            gPresident.RowHeadersWidth = 51;
+            gPresident.RowTemplate.Height = 29;
+            gPresident.Size = new Size(814, 460);
+            gPresident.StandardTab = true;
+            gPresident.TabIndex = 1;
             // 
             // frmSearch
             // 
@@ -220,9 +228,9 @@
             tblMain.PerformLayout();
             tblSearch.ResumeLayout(false);
             tblSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gPresident).EndInit();
             tblTermStart.ResumeLayout(false);
             tblTermStart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gPresident).EndInit();
             ResumeLayout(false);
         }
 

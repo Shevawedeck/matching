@@ -27,7 +27,7 @@ namespace RecordKeeperSystem
         public static void Delete(int presidentmedalid)
         {
             SqlCommand cmd = SQLUtility.GetSQLCommand("PresidentMedalDelete");
-            cmd.Parameters["PresidentMedalId"].Value = presidentmedalid;
+            cmd.Parameters["@PresidentMedalId"].Value = presidentmedalid;
             SQLUtility.ExecuteSQL(cmd);
         }
     }

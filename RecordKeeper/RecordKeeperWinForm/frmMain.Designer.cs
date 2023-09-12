@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             mnuMain = new MenuStrip();
+            mnuFile = new ToolStripMenuItem();
+            mnuDashboard = new ToolStripMenuItem();
             mnuPresident = new ToolStripMenuItem();
             mnuSearchPres = new ToolStripMenuItem();
             mnuNewPres = new ToolStripMenuItem();
+            mnuOlympics = new ToolStripMenuItem();
+            mnuOlympicsList = new ToolStripMenuItem();
+            mnuOlympicsCreateNewBasedOn = new ToolStripMenuItem();
+            mnuDataMaint = new ToolStripMenuItem();
+            mnuDataMaintEdit = new ToolStripMenuItem();
             mnuWindow = new ToolStripMenuItem();
             mnuWindowTile = new ToolStripMenuItem();
             mnuWindowCascade = new ToolStripMenuItem();
-            mnuDataMaint = new ToolStripMenuItem();
-            mnuDataMaintEdit = new ToolStripMenuItem();
             tsMain = new ToolStrip();
             mnuMain.SuspendLayout();
             SuspendLayout();
@@ -45,12 +50,25 @@
             // 
             mnuMain.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             mnuMain.ImageScalingSize = new Size(20, 20);
-            mnuMain.Items.AddRange(new ToolStripItem[] { mnuPresident, mnuDataMaint, mnuWindow });
+            mnuMain.Items.AddRange(new ToolStripItem[] { mnuFile, mnuPresident, mnuOlympics, mnuDataMaint, mnuWindow });
             mnuMain.Location = new Point(0, 0);
             mnuMain.Name = "mnuMain";
             mnuMain.Size = new Size(1100, 36);
             mnuMain.TabIndex = 1;
             mnuMain.Text = "menuStrip1";
+            // 
+            // mnuFile
+            // 
+            mnuFile.DropDownItems.AddRange(new ToolStripItem[] { mnuDashboard });
+            mnuFile.Name = "mnuFile";
+            mnuFile.Size = new Size(56, 32);
+            mnuFile.Text = "File";
+            // 
+            // mnuDashboard
+            // 
+            mnuDashboard.Name = "mnuDashboard";
+            mnuDashboard.Size = new Size(194, 32);
+            mnuDashboard.Text = "Dashboard";
             // 
             // mnuPresident
             // 
@@ -71,6 +89,38 @@
             mnuNewPres.Size = new Size(223, 32);
             mnuNewPres.Text = "New President";
             // 
+            // mnuOlympics
+            // 
+            mnuOlympics.DropDownItems.AddRange(new ToolStripItem[] { mnuOlympicsList, mnuOlympicsCreateNewBasedOn });
+            mnuOlympics.Name = "mnuOlympics";
+            mnuOlympics.Size = new Size(107, 32);
+            mnuOlympics.Text = "Olympics";
+            // 
+            // mnuOlympicsList
+            // 
+            mnuOlympicsList.Name = "mnuOlympicsList";
+            mnuOlympicsList.Size = new Size(362, 32);
+            mnuOlympicsList.Text = "List Of Olympics";
+            // 
+            // mnuOlympicsCreateNewBasedOn
+            // 
+            mnuOlympicsCreateNewBasedOn.Name = "mnuOlympicsCreateNewBasedOn";
+            mnuOlympicsCreateNewBasedOn.Size = new Size(362, 32);
+            mnuOlympicsCreateNewBasedOn.Text = "Create New based on Previous";
+            // 
+            // mnuDataMaint
+            // 
+            mnuDataMaint.DropDownItems.AddRange(new ToolStripItem[] { mnuDataMaintEdit });
+            mnuDataMaint.Name = "mnuDataMaint";
+            mnuDataMaint.Size = new Size(184, 32);
+            mnuDataMaint.Text = "Data Maintenence";
+            // 
+            // mnuDataMaintEdit
+            // 
+            mnuDataMaintEdit.Name = "mnuDataMaintEdit";
+            mnuDataMaintEdit.Size = new Size(178, 32);
+            mnuDataMaintEdit.Text = "Edit Data";
+            // 
             // mnuWindow
             // 
             mnuWindow.DropDownItems.AddRange(new ToolStripItem[] { mnuWindowTile, mnuWindowCascade });
@@ -89,19 +139,6 @@
             mnuWindowCascade.Name = "mnuWindowCascade";
             mnuWindowCascade.Size = new Size(169, 32);
             mnuWindowCascade.Text = "Cascade";
-            // 
-            // mnuDataMaint
-            // 
-            mnuDataMaint.DropDownItems.AddRange(new ToolStripItem[] { mnuDataMaintEdit });
-            mnuDataMaint.Name = "mnuDataMaint";
-            mnuDataMaint.Size = new Size(184, 32);
-            mnuDataMaint.Text = "Data Maintenence";
-            // 
-            // mnuDataMaintEdit
-            // 
-            mnuDataMaintEdit.Name = "mnuDataMaintEdit";
-            mnuDataMaintEdit.Size = new Size(224, 32);
-            mnuDataMaintEdit.Text = "Edit Data";
             // 
             // tsMain
             // 
@@ -144,5 +181,10 @@
         private ToolStrip tsMain;
         private ToolStripMenuItem mnuDataMaint;
         private ToolStripMenuItem mnuDataMaintEdit;
+        private ToolStripMenuItem mnuFile;
+        private ToolStripMenuItem mnuDashboard;
+        private ToolStripMenuItem mnuOlympics;
+        private ToolStripMenuItem mnuOlympicsList;
+        private ToolStripMenuItem mnuOlympicsCreateNewBasedOn;
     }
 }
