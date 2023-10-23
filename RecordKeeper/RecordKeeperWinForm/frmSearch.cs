@@ -1,8 +1,4 @@
-﻿using System.Data;
-using System.Diagnostics;
-
-
-namespace RecordKeeperWinForm
+﻿namespace RecordKeeperWinForm
 {
     public partial class frmSearch : Form
     {

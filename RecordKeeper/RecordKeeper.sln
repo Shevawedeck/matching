@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUFramework", "..\..\CPUFr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUWinFormsFramework", "..\..\CPUWinFormsFramework\CPUWinFormsFramework.csproj", "{A9963A57-2F9F-424F-8182-8E50FD4B2EEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordKeeperSystem", "RecordKeeperSystem\RecordKeeperSystem.csproj", "{97BF7819-25E8-490E-9BC2-7498BF7226DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecordKeeperSystem", "RecordKeeperSystem\RecordKeeperSystem.csproj", "{97BF7819-25E8-490E-9BC2-7498BF7226DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordKeeperTest", "RecordKeeperTest\RecordKeeperTest.csproj", "{74A9FE31-7811-414A-9B99-61FB0526E756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecordKeeperTest", "RecordKeeperTest\RecordKeeperTest.csproj", "{74A9FE31-7811-414A-9B99-61FB0526E756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordKeeperMAUI", "RecordKeeperMAUI\RecordKeeperMAUI.csproj", "{BE090EB6-0B6C-412D-890F-434FE9B49940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,12 @@ Global
 		{74A9FE31-7811-414A-9B99-61FB0526E756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74A9FE31-7811-414A-9B99-61FB0526E756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74A9FE31-7811-414A-9B99-61FB0526E756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE090EB6-0B6C-412D-890F-434FE9B49940}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

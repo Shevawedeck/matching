@@ -126,7 +126,7 @@
             lstSeasonName.Margin = new Padding(3, 3, 3, 10);
             lstSeasonName.Name = "lstSeasonName";
             lstSeasonName.Size = new Size(437, 28);
-            lstSeasonName.TabIndex = 6;
+            lstSeasonName.TabIndex = 0;
             // 
             // lstCityDesc
             // 
@@ -136,7 +136,7 @@
             lstCityDesc.Margin = new Padding(3, 3, 3, 10);
             lstCityDesc.Name = "lstCityDesc";
             lstCityDesc.Size = new Size(437, 28);
-            lstCityDesc.TabIndex = 7;
+            lstCityDesc.TabIndex = 1;
             // 
             // txtYear
             // 
@@ -145,7 +145,7 @@
             txtYear.Margin = new Padding(3, 3, 3, 10);
             txtYear.Name = "txtYear";
             txtYear.Size = new Size(437, 27);
-            txtYear.TabIndex = 8;
+            txtYear.TabIndex = 2;
             // 
             // lstOlympicDesc
             // 
@@ -155,7 +155,7 @@
             lstOlympicDesc.Margin = new Padding(3, 3, 3, 10);
             lstOlympicDesc.Name = "lstOlympicDesc";
             lstOlympicDesc.Size = new Size(437, 28);
-            lstOlympicDesc.TabIndex = 9;
+            lstOlympicDesc.TabIndex = 3;
             // 
             // btnCreate
             // 
@@ -164,7 +164,7 @@
             btnCreate.Location = new Point(375, 207);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(161, 30);
-            btnCreate.TabIndex = 5;
+            btnCreate.TabIndex = 4;
             btnCreate.Text = "Create New Olympics";
             btnCreate.UseVisualStyleBackColor = true;
             // 

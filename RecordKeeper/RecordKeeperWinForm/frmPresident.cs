@@ -17,10 +17,7 @@ namespace RecordKeeperWinForm
             btnSaveMedal.Click += BtnSaveMedal_Click;
             gMedal.CellContentClick += GMedal_CellContentClick;
         }
-
-       
-
-        public void ShowForm(int presidentidval)
+        public void LoadForm(int presidentidval)
         {
             presidentid = presidentidval;
             this.Tag = presidentid;
@@ -41,7 +38,7 @@ namespace RecordKeeperWinForm
             WindowsFormUtility.SetControlBinding(txtTermEnd, bindsource);
             this.Text = GetPresidentDesc();
             LoadPresidentMedals();
-            this.Show();
+            SetButtonsEnabledBasedOnNew();
         }
         private void LoadPresidentMedals()
         {
@@ -61,7 +58,9 @@ namespace RecordKeeperWinForm
                 President.Save(dtpresident);
                 b = true;
                 bindsource.ResetBindings(false);
-                this.Tag = SQLUtility.GetValueFromFirstRowAsInt(dtpresident, "PresidentId");
+                presidentid = SQLUtility.GetValueFromFirstRowAsInt(dtpresident, "PresidentId");
+                this.Tag = presidentid;
+                SetButtonsEnabledBasedOnNew();
                 this.Text = GetPresidentDesc();
             }
             catch (Exception ex)
@@ -133,6 +132,12 @@ namespace RecordKeeperWinForm
             {
                 gMedal.Rows.RemoveAt(rowindex);
             }
+        }
+        private void SetButtonsEnabledBasedOnNew()
+        {
+            bool b = presidentid == 0 ? false : true;
+            btnDelete.Enabled = b;
+            btnSaveMedal.Enabled = b;
         }
         private string GetPresidentDesc()
         {

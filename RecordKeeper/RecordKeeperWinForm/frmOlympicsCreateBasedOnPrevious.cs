@@ -25,12 +25,17 @@
             try
             {
                 Olympics.CreateOlympicsBasedOnPrevious(seasonid, cityid, year, basedonid);
+                if (this.MdiParent != null && this.MdiParent is frmMain)
+                {
+                    ((frmMain)this.MdiParent).OpenForm(typeof(frmOlympicsSummary));
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, Application.ProductName);
             }
-            finally 
+            finally
             {
                 Cursor = Cursors.Default;
             }

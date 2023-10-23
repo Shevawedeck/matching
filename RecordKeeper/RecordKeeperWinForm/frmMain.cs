@@ -23,6 +23,18 @@ namespace RecordKeeperWinForm
             mnuDataMaintEdit.Click += MnuDataMaintEdit_Click;
             mnuOlympicsCreateNewBasedOn.Click += MnuOlympicsCreateNewBasedOn_Click;
             mnuOlympicsList.Click += MnuOlympicsList_Click;
+            this.Shown += FrmMain_Shown;
+        }
+        private void FrmMain_Shown(object? sender, EventArgs e)
+        {
+            frmLogin f = new() { StartPosition = FormStartPosition.CenterParent };
+            bool b = f.ShowLogin();
+            if (b == false)
+            {
+                this.Close();
+                Application.Exit();
+                return;
+            }
             OpenForm(typeof(frmDashboard));
         }
 
@@ -36,37 +48,32 @@ namespace RecordKeeperWinForm
                 {
                     frmPresident f = new frmPresident();
                     newfrm = f;
-                    f.ShowForm(pkvalue);
+                    f.LoadForm(pkvalue);
                 }
                 else if (frmtype == typeof(frmSearch))
                 {
                     frmSearch f = new();
                     newfrm = f;
-                    f.Show();
                 }
                 else if (frmtype == typeof(frmDataMaintenence))
                 {
                     frmDataMaintenence f = new();
                     newfrm = f;
-                    f.Show();
                 }
                 else if (frmtype == typeof(frmDashboard))
                 {
                     frmDashboard f = new frmDashboard();
                     newfrm = f;
-                    f.Show();
                 }
                 else if (frmtype == typeof(frmOlympicsCreateBasedOnPrevious))
                 {
                     frmOlympicsCreateBasedOnPrevious f = new();
                     newfrm = f;
-                    f.Show();
                 }
                 else if (frmtype == typeof(frmOlympicsSummary))
                 {
                     frmOlympicsSummary f = new();
                     newfrm = f;
-                    f.Show();
                 }
                 if (newfrm != null)
                 {
@@ -74,6 +81,7 @@ namespace RecordKeeperWinForm
                     newfrm.WindowState = FormWindowState.Maximized;
                     newfrm.FormClosed += Frm_FormClosed;
                     newfrm.TextChanged += Newfrm_TextChanged;
+                    newfrm.Show();
                 }
                 WindowsFormUtility.SetUpNav(tsMain);
             }
@@ -123,6 +131,6 @@ namespace RecordKeeperWinForm
         {
             OpenForm(typeof(frmOlympicsSummary));
         }
-
+        
     }
 }
