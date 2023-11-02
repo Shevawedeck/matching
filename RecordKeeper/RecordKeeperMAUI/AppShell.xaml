@@ -15,10 +15,10 @@
         Title="President Search"
         ContentTemplate="{DataTemplate local:PresidentSearch}"
         Route="PresidentSearch" />
-
+    </TabBar>
+    
         <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:Login}"
         Route="Login" />
-    </TabBar>
 </Shell>
